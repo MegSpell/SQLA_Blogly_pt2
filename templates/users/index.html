@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+
+<h1>Users</h1>
+
+<ul class="user-name-list">
+  {% for user in users %}
+  <li>
+    <a href="/users/{{ user.id }}">{{ user.full_name }}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+<div class="button-container">
+  <a class="add-button" href="/users/new">Add New User</a>
+  <a class="homepage-link" href="/">Back to Homepage!</a>
+</div>
+
+{% endblock %}
